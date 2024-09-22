@@ -9,25 +9,41 @@ have a length of 1 or greater.
 */
 
 function longestName(names) {
-  set currentLongest = names[1];
-
-  for (let i = 2 ; i <= names.Length ; i++) {
-    if (names[i].Length > currentLongest.Length) {
+  // console.log("longest is first name");
+  let currentLongest = names[0];
+  for (let i = 0; i < names.length; i++) {
+    // console.log('before change');
+    if (names[i].length > currentLongest.length) {
+      // console.log("after change");
       currentLongest = names[i];
+      // console.log(names[i]);
     }
   }
 
   return currentLongest;
 }
 
-testNames = ["James", "Patricia", "Michael", "Elizabeth", "Chris",
-             "Sarah", "Margaret", "Kenneth", "Stephanie", "Jonathan",
-             "Jeremy", "Samantha", "Alexander", "Catherine", "Benjamin"]
+testNames = [
+  "James",
+  "Patricia",
+  "Michael",
+  "Elizabeth",
+  "Chris",
+  "Sarah",
+  "Margaret",
+  "Kenneth",
+  "Stephanie",
+  "Jonathan",
+  "Jeremy",
+  "Samantha",
+  "Alexander",
+  "Catherine",
+  "Benjamin",
+];
 
 console.log(longestName(testNames)); // "Elizabeth"
 
 // Watch the walkthrough video for how to debug this problem
-
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = longestName;
